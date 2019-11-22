@@ -58,16 +58,16 @@ function romanStringToInt(string $roman_number): int{
   //TODO
 }
 
-assert(reverseInt("I") == 1);
-assert(reverseInt("III") == 3);
-assert(reverseInt("IV") == 4);
-assert(reverseInt("V") == 5);
-assert(reverseInt("VII") == 7);
-assert(reverseInt("IX") == 9);
-assert(reverseInt("XXII") == 22);
-assert(reverseInt("XVI") == 26);
-assert(reverseInt("LXXIV") == 74);
-assert(reverseInt("XLIX") == 49);
+assert(romanStringToInt("I") == 1);
+assert(romanStringToInt("III") == 3);
+assert(romanStringToInt("IV") == 4);
+assert(romanStringToInt("V") == 5);
+assert(romanStringToInt("VII") == 7);
+assert(romanStringToInt("IX") == 9);
+assert(romanStringToInt("XXII") == 22);
+assert(romanStringToInt("XVI") == 26);
+assert(romanStringToInt("LXXIV") == 74);
+assert(romanStringToInt("XLIX") == 49);
 ```
 
 ### Q.5
