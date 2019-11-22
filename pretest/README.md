@@ -183,6 +183,30 @@ $data = [
 
 assert(sum_field($data, 'x') == 60); // 10 + 20 + 30
 ```
+### Q.2
+กำหนดโครงสร้าง `data` ในรูปแบบต่อไปนี้
+```php
+$scores = [
+  ['score' => 85, 'gender' => 'M'],
+  ['score' => 78, 'gender' => 'M'],
+  ['score' => 30, 'gender' => 'M'],
+  ['score' => 54, 'gender' => 'F'],
+  ['score' => 72, 'gender' => 'F'],
+];
+```
+สร้างฟังก์ชันที่รับโครงสร้าง `array` ของ score เข้าไปแล้ว
+- บวกคะแนนให้ทุกคนอีก 10 คะแนน
+- เลือกเฉพาะ score ของ male ออกมา
+- หาค่าเฉลี่ย
+
+โดยมีเงื่อนไขคือห้ามใช้ loop
+> **HINT**: สามารถใช้ halper function ของ php มาช่วยแทนได้ https://www.php.net/manual/en/function.array.php
+
+```php
+function getAverageMaleScoreAfterExtra10(array $scores): float {
+  //TODO
+}
+```
 
 ---
 
