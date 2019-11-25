@@ -139,7 +139,7 @@ assert(rotateSquareRight(
 - แสดงรายชื่อพนักงานทุกคนที่เงินเดือน > 18000 เรียงตาม position
 
 ### Q.2
-สร้างระบบสำหรับฟังก์ชันสร้าง interval times เช่น ต้องการเวลาทั้งหมดเริ่มตั้งแต่ 8 โมงเช้าถึง 10 โมงเช้า โดยแต่ละช่วงเวลาจะห่างกันทุกๆ 15 นาที
+สร้างระบบ (class + object) สำหรับฟังก์ชันสร้าง interval times เช่น ต้องการเวลาทั้งหมดเริ่มตั้งแต่ 8 โมงเช้าถึง 10 โมงเช้า โดยแต่ละช่วงเวลาจะห่างกันทุกๆ 15 นาที
 ```php
 $times = makeTimeInterval("8:00", "10:00", 15);
 print_r($times);//["08:00","08:15","08:30","08:45","09:00","09:15","09:30","09:45","10:00"]
@@ -208,7 +208,59 @@ function getAverageMaleScoreAfterExtra10(array $scores): float {
 }
 ```
 
+### Q.3
+อธิบายว่าคอนเซ็ปต่อไปนี้ในการเขียนโปรแกรมแบบ Functional คืออะไร
+- Pure Function
+- First-Class Function
+- High Order Function
+- Closure
+
 ---
 
 ## Database
-*under construction*
+
+### Q.1
+อธิบายความแตกต่างระหว่าง RDBMS vs NoSQL
+
+### Q.2
+Index ในระบบ Database มีไว้สำหรับทำอะไร และเมื่อไหร่ที่ควรร้าง
+
+### Q.3
+ระหว่างการเขียน query
+
+```sql
+SELECT *
+FROM Student s, Major m
+WHERE s.major_id = m.major_id AND s.GPA > 3.00
+```
+และ
+```sql
+SELECT *
+FROM Student s JOIN Major m ON s.major_id = m.major_id 
+WHERE s.GPA > 3.00
+```
+แบบไหนทำงานได้ performance ดีกว่ากัน (ทั้งเรื่อง time-complexity และ memory-complexity)
+
+### Q.4
+ออกแบบ ER Diagram ของระบบต่อไปนี้
+
+บริษัท Grab Food ต้องการ application สำหรับพนักงานส่งของของบริษัท (ต่อจากนี้จะเรียกว่า SD: Sale Driver)
+
+ซึ่ง SD แต่ละคนจะสามารถกดเปิดแอพเพื่อ task list ซึ่งเป็นลิสต์ของงานที่ต้องทำได้ ถ้าSDสนใจรับงานไหนมาทำ เขาจะต้องทำการ booking task นั้นไว้เพื่อจองงาน (SD คนอื่นจะได้ไม่เอา task นั้นไป)
+
+หลังจาก SD booking งานแล้วทำงานจนเสร็จ เขาจะสามารถรับงานต่อไปได้ (ถ้าเขายังทำงานไม่เสร็จ จะไม่มีสิทธิ์รับงานต่อไป ยกเว้นเขาจะ cancel booking ที่ทำอยู่ก่อน)
+
+ระบบจะต้องสามารถดึงข้อมูลว่าในขณะนี้มี SD กี่คนที่กำลังรับงานอยู่ในระบบ และแสดงค่าตอบแทนของ SD แต่ละคนแบบรายวัน/เดือนได้ โดยค่าตอบแทนของ SD ในการรับส่งงาน 1 task จะไม่เท่ากัน ขึ้นอยู่กับระยะทางใกล้-ไกลของ task
+
+ข้อมูลของ SD ที่ระบบจะต้องจัดเก็บ
+- sd-code
+- contact name
+- tel
+- address
+
+ข้อมูลของ task งานจะประกอบด้วย
+- task-id
+- source-location (latitude, longitude)
+- destination-location (latitude, longitude)
+- fee-rate per km (อัตราค่าตอบแทนในการส่งของ เป็นราคาต่อกิโลเมตร)
+- list of delivery product (รายชื่อสินของทั้งหมด ที่ต้องรับ-ส่งสำหรับ task นี้)
