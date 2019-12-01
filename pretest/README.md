@@ -200,7 +200,7 @@ $scores = [
 - หาค่าเฉลี่ย
 
 โดยมีเงื่อนไขคือห้ามใช้ loop
-> **HINT**: สามารถใช้ halper function ของ php มาช่วยแทนได้ https://www.php.net/manual/en/function.array.php
+> **HINT**: สามารถใช้ helper function ของ php มาช่วยแทนได้ https://www.php.net/manual/en/function.array.php
 
 ```php
 function getAverageMaleScoreAfterExtra10(array $scores): float {
@@ -223,7 +223,7 @@ function getAverageMaleScoreAfterExtra10(array $scores): float {
 อธิบายความแตกต่างระหว่าง RDBMS vs NoSQL
 
 ### Q.2
-Index ในระบบ Database มีไว้สำหรับทำอะไร และเมื่อไหร่ที่ควรร้าง
+Index ในระบบ Database มีไว้สำหรับทำอะไร และเมื่อไหร่ที่ควรสร้าง
 
 ### Q.3
 ระหว่างการเขียน query
