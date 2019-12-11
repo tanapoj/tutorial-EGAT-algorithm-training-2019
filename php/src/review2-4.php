@@ -19,17 +19,16 @@ function romanStringToInt(string $romanNumber): int
     $total = 0;
     $highest = null;
 
-    $rev = strrev($romanNumber);
+    $reversed = strrev($romanNumber);
     for ($i = 0; $i < $n; $i++) {
-        $current_char = $rev[$i];
-        $current_value = $table[$current_char];
+        $current = $reversed[$i];
+        $current_value = $table[$current];
         $highest_value = $table[$highest];
-        if($current_value < $highest_value){
+        if ($current_value < $highest_value) {
             $total = $total - $current_value;
-        }
-        else{
+        } else {
             $total = $total + $current_value;
-            $highest = $current_char;
+            $highest = $current;
         }
     }
     echo "$total\n";

@@ -1,6 +1,21 @@
 # EGAT Training
 11 - 13 Dec 2019
 
+install dependency
+```
+composer install
+```
+
+run php file
+```
+php -f [filename.php]
+```
+
+start build-in server
+```
+php -S localhost:8080 -t src
+```
+
 ## Section 1: Fundamental and Concept in Programming
     Basic Knowledge
         Input -> Process -> Output

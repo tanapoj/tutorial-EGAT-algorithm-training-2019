@@ -7,16 +7,16 @@ function palindromicCounter(string $sentence): int
     for ($i = 0; $i < $n; $i += 0.5) {
         if ($i == intval($i)) {
             $count = 1;
-            $front = intval($i - 1);
-            $back = intval($i + 1);
+            $left = intval($i - 1);
+            $right = intval($i + 1);
         } else {
             $count = 0;
-            $front = intval($i - 0.5);
-            $back = intval($i + 0.5);
+            $left = intval($i - 0.5);
+            $right = intval($i + 0.5);
         }
 
-        for (; $front >= 0 && $back < $n; $front--, $back++) {
-            if ($sentence[$front] != $sentence[$back]) break;
+        for (; $left >= 0 && $right < $n; $left--, $right++) {
+            if ($sentence[$left] != $sentence[$right]) break;
             $count += 2;
         }
 

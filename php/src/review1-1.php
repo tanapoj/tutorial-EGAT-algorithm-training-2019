@@ -7,13 +7,17 @@
  */
 function hasSumOfTwo(array $numbers, int $total): bool
 {
-    $exist = [];
-    foreach($numbers as $item){
-        $require = $total - $item;
-        if(in_array($require, $exist)){
-            return true;
+    $i = 0;
+    while ($i < count($numbers)) {
+        $j = $i + 1;
+        while ($j < count($numbers)) {
+            $sum = $numbers[$i] + $numbers[$j];
+            if ($sum == $total) {
+                return true;
+            }
+            $j++;
         }
-        $exist[] = $item;
+        $i++;
     }
     return false;
 }

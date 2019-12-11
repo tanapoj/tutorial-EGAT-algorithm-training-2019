@@ -7,10 +7,10 @@ function isValidParentheses(string $sentence): bool
 
     for ($i = 0; $i < intval(strlen($sentence) / 2); $i++) {
         $a = $sentence[$i];
-        $b = $sentence[strlen($sentence)-$i-1];
-        if($a == "(" && $b != ")") return false;
-        if($a == "{" && $b != "}") return false;
-        if($a == "[" && $b != "]") return false;
+        $b = $sentence[strlen($sentence) - $i - 1];
+        if ($a == "(" && $b != ")") return false;
+        if ($a == "{" && $b != "}") return false;
+        if ($a == "[" && $b != "]") return false;
     }
     return true;
 }
