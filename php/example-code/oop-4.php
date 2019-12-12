@@ -7,7 +7,7 @@
 //
 //$connection = mysqli_connect("localhost", "root", "1234");
 //$result = mysqli_query("
-//    SELETE *
+//    SELECT *
 //    FROM Users
 //    WHERE username = '$username' AND password = '$password'
 //");
@@ -51,7 +51,7 @@ class Authenticator
 
         $connection = mysqli_connect("localhost", "root", "1234");
         $result = mysqli_query("
-                SELETE *
+                SELECT *
                 FROM Users
                 WHERE username = '$username' AND password = '$password'
             ");
